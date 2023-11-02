@@ -1,14 +1,14 @@
-import Footer from './Footer'
-import Header from './Header'
+import Footer from './Footer';
+import Header from './Header';
 
 function DefaultLayout({ children }) {
-  return (
-    <>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </>
-  )
+    return (
+        <>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+        </>
+    );
 }
 
-export default DefaultLayout
+export default DefaultLayout;
