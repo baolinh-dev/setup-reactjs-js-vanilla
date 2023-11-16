@@ -1,28 +1,27 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addHobby, removeHobby } from '~/actions/hobbyActions'; 
-import casual from 'casual-browserify'
+import { addHobby, removeHobby } from '~/actions/hobbyActions';
+import casual from 'casual-browserify';
 
 function Home() {
     const [hobby, setHobby] = useState('');
     const hobbies = useSelector((state) => state.hobby.hobbies);
     const dispatch = useDispatch();
 
-    function handleAddHobby() { 
+    function handleAddHobby() {
         const newHobby = {
-            hobbyId: casual.uuid, 
-            name: hobby
-        }
+            hobbyId: casual.uuid,
+            name: hobby,
+        };
         const action = addHobby(newHobby);
         dispatch(action);
         setHobby(''); // Reset the input value after adding a hobby
-    } 
+    }
 
     function handleDeleteHobby(hobbyId) {
-        console.log(hobby); 
-        const action = removeHobby(hobbyId); 
-        dispatch(action)
+        const action = removeHobby(hobbyId);
+        dispatch(action);
     }
 
     return (
@@ -37,7 +36,8 @@ function Home() {
 
             <ul>
                 {hobbies.map((hobby, index) => (
-                    <li key={index}>{hobby.name} 
+                    <li key={index}>
+                        {hobby.name}
                         <button onClick={() => handleDeleteHobby(hobby.hobbyId)}>Delete</button>
                     </li>
                 ))}

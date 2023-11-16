@@ -2,7 +2,7 @@ import { ADD_HOBBY, REMOVE_HOBBY } from './actionTypes';
 
 // Khởi tạo state ban đầu
 const initialState = {
-    hobbies: [], 
+    hobbies: [],
 };
 
 // Định nghĩa reducer

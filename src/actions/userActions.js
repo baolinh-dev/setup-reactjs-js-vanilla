@@ -1,4 +1,4 @@
-import { ADD_USER, REMOVE_USER, EDIT_USER } from '../reducers/actionTypes'; 
+import { ADD_USER, REMOVE_USER, EDIT_USER } from '../reducers/actionTypes';
 
 export const addUser = (user) => ({
     type: ADD_USER,
